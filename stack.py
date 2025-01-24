@@ -1,7 +1,7 @@
 import sys
 sys.setrecursionlimit(100000)
 def execute(string,stack=[]):
-	string=string.replace("  "," ").split(" ")
+	string=string.replace("  "," ").strip().split(" ")
 	registers=dict()
 	try:
 		for i in range(len(string)):
