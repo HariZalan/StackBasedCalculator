@@ -1,2 +1,3 @@
 # StackBasedCalculator
-A stack-based calculator written in Python
+It is a calculator using Reverse Polish Notation written in Python, with loops and conditionals. The commands are:
+...
