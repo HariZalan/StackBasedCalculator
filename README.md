@@ -31,3 +31,9 @@ Print Fibonacci numbers indefinitely:
 
 Pointless loop slowly taking memory up:
 `d_e d e`
+
+## Usage
+
+You can use the calculator with
+
+`python3 ./calc "the code to execute"`
