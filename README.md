@@ -13,4 +13,21 @@ It is a calculator using Reverse Polish Notation written in Python, with loops a
 | p | Prints the top value.
 | =i | Pops off two values, and if they are equal, moves a third one to register i.
 | <i | Pops off two values, and if the first is greater than the second, moves a third one to register i.
+## Syntax
 
+Commands must be separated with spaces. In order to prevent them from being immediately executed, and put them on the stack (where you can use "e"), substitute spaces with underscores. 
+
+## Examples
+3 + 4:
+`3 4 + p`
+
+Print even numbers with an infinite loop:
+
+`0 p ri_2_+_p_Ri_d_e d e`
+
+Print Fibonacci numbers indefinitely:
+
+`0 1 ri_rj_rk_Rj_d_Rk_+_p_Ri_d_e d e`
+
+Pointless loop slowly taking memory up:
+`d_e d e`
