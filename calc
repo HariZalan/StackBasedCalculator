@@ -1,0 +1,5 @@
+#!/bin/python3
+import sys
+x=sys.argv[1]
+import stack
+stack.execute(x)
