@@ -13,6 +13,7 @@ It is a calculator using Reverse Polish Notation written in Python, with loops a
 | p | Prints the top value.
 | =i | Pops off two values, and if they are equal, moves a third one to register i.
 | <i | Pops off two values, and if the first is greater than the second, moves a third one to register i.
+| q | Quit immediately
 ## Syntax
 
 Commands must be separated with spaces. In order to prevent them from being immediately executed, and put them on the stack (where you can use "e"), substitute spaces with underscores. 

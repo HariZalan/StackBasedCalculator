@@ -43,6 +43,8 @@ def execute(string,stack=[]):
 						x=stack.pop()
 						x=x.replace("_"," ")
 						execute(x,stack)
+					elif (string[i]=="q"):
+						exit(0)
 					elif (string[i][0]=="r" and len(string[i])==2):
 						x=stack.pop()
 						registers[string[i][1]]=x
