@@ -1,8 +1,7 @@
 import sys
 sys.setrecursionlimit(100000)
-def execute(string,stack=[]):
+def execute(string,stack=[],registers=dict()):
 	string=string.replace("  "," ").strip().split(" ")
-	registers=dict()
 	try:
 		for i in range(len(string)):
 			try:
@@ -37,12 +36,24 @@ def execute(string,stack=[]):
 						x=stack.pop()
 						stack.append(x)
 						print(str(x))
+					elif (string[i]=="u" or string[i]=="U"):
+						x=input()
+						if (string[i]=="U"):
+							X=x.split(" ")
+						else:
+							X=[x]
+						for j in X:	
+							try:
+								stack.append(int(j))
+							except:
+								stack.append(j)
+					
 					elif (string[i]=="P"):
 						stack.pop()
 					elif (string[i]=="e"):
 						x=stack.pop()
 						x=str(x).replace("_"," ")
-						execute(x,stack)
+						execute(x,stack,registers)
 					elif (string[i]=="q"):
 						exit(0)
 					elif (string[i][0]=="r" and len(string[i])==2):
@@ -75,3 +86,8 @@ def execute(string,stack=[]):
 		print("Stack empty")
 	except TypeError:
 		print("Bad typing")
+	except RecursionError:
+		print("Too many recursion levels")
+	except ZeroDivisionError:
+		print("Division by zero")
+		
