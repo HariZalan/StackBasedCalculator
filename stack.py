@@ -41,7 +41,7 @@ def execute(string,stack=[]):
 						stack.pop()
 					elif (string[i]=="e"):
 						x=stack.pop()
-						x=x.replace("_"," ")
+						x=str(x).replace("_"," ")
 						execute(x,stack)
 					elif (string[i]=="q"):
 						exit(0)
