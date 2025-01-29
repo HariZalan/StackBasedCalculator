@@ -14,6 +14,7 @@ It is a calculator using Reverse Polish Notation written in Python, with loops a
 | =i | Pops off two values, and if they are equal, moves a third one to register i.
 | <i | Pops off two values, and if the first is greater than the second, moves a third one to register i.
 | q | Quit immediately
+| s | Push the stack size
 ## Syntax
 
 Commands must be separated with spaces. In order to prevent them from being immediately executed, and put them on the stack (where you can use "e"), substitute spaces with underscores. 
@@ -33,6 +34,7 @@ Print Fibonacci numbers indefinitely:
 Pointless loop slowly taking memory up:
 `d_e d e`
 
+Registers are stacks as well, however, Ri does not remove the top value from them, due to the advantages of better usability.
 ## Usage
 
 You can use the calculator with

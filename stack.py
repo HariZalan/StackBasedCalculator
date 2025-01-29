@@ -54,20 +54,30 @@ def execute(string,stack=[],registers=dict()):
 						x=stack.pop()
 						x=str(x).replace("_"," ")
 						execute(x,stack,registers)
+					elif (string[i]=="s"):
+						stack.append(len(stack))
 					elif (string[i]=="q"):
 						exit(0)
 					elif (string[i][0]=="r" and len(string[i])==2):
 						x=stack.pop()
-						registers[string[i][1]]=x
+						try:
+							registers[string[i][1]].append(x)
+						except:
+							registers[string[i][1]]=[]
+							registers[string[i][1]].append(x)
 					elif (string[i][0]=="R" and len(string[i])==2):
-						x=registers[string[i][1]]
+						x=registers[string[i][1]][-1]
 						stack.append(x)
 					elif (string[i][0]=="=" and len(string[i])==2):
 						x=stack.pop()
 						y=stack.pop()
 						z=stack.pop()
 						if (x==y):
-							registers[string[i][1]]=z
+							try:
+								registers[string[i][1]].append(z)
+							except:
+								registers[string[i][1]]=[]
+								registers[string[i][1]].append(z)
 						else:
 							stack.append(z)
 					elif (string[i][0]=="<" and len(string[i])==2):
@@ -75,7 +85,11 @@ def execute(string,stack=[],registers=dict()):
 						y=stack.pop()
 						z=stack.pop()
 						if (y<x):
-							registers[string[i][1]]=z
+							try:
+								registers[string[i][1]].append(z)
+							except:
+								registers[string[i][1]]=[]
+								registers[string[i][1]].append(z)
 						else:
 							stack.append(z)
 					else:
